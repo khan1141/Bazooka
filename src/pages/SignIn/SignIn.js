@@ -6,6 +6,7 @@ import Quote from '../../../assets/images/login_quote.png'
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 const SignIn = () => {
@@ -18,9 +19,11 @@ const SignIn = () => {
 
   const onSignInPressed = () => {
     console.warn("Signed In");
+    navigation.navigate('HomePage');
   }
   const onForgotPasswordPressed = () => {
     console.warn("Forgot Password");
+    navigation.navigate('ForgotPassword');
   }
   const onRegisterPressed = () => {
     console.warn("Register");
@@ -30,10 +33,10 @@ const SignIn = () => {
 
   return (
    
-  /*  <LinearGradient
+    <LinearGradient
       colors={['#1F1F1F', '#000000']} // Set your gradient colors here
-      style={styles.root}
-      >*/
+      style={styles.linear}
+      >
       <View style = {styles.root}>
       <Image 
       source={Logo} 
@@ -88,7 +91,7 @@ const SignIn = () => {
 
   </View>
 
-   // </LinearGradient>
+    </LinearGradient>
     
   
   );
@@ -149,6 +152,9 @@ const styles = StyleSheet.create({
     bottom: "1%", // Adjust this value as needed
     height: '100%',
   },
+  linear: {
+    flex:1,
+  }
  
 });
 

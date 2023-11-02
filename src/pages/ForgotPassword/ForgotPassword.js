@@ -8,30 +8,23 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-const SignUp = () => {
+const ForgotPassword = () => {
   const navigation = useNavigation();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [code, setCode] = useState('');
+
 
   const {width, height} = useWindowDimensions();
   const windowWidth = Dimensions.get('window').width;
 
-  const onSignUpPressed = () => {
+  const onConfirmPressed = () => {
     console.warn("Signed In");
-    navigation.navigate('Confirmation');
+    navigation.navigate('HomePage');
   }
-
-  const onRegisterPressed = () => {
-    console.warn("Register");
-    
-  }
-
   const onHaveAnAccountPressed = () => {
     console.warn("Register");
     navigation.navigate('SignIn');
   }
+
 
   return (
     <LinearGradient
@@ -44,6 +37,7 @@ const SignUp = () => {
       style = {[styles.logo, {height: height * 0.4}]} 
       resizeMode="contain" 
       />
+      <Text style ={styles.title}>Reset Password</Text>
     
   <KeyboardAvoidingView
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -51,43 +45,25 @@ const SignUp = () => {
   >
 
     <CustomInput 
-      placeholder="Username" 
-      value={username} 
-      setValue={setUsername} 
-      customTop="15%"
-    />
-    <CustomInput 
-      placeholder="Email Address" 
-      value={email} 
-      setValue={setEmail} 
-      customTop="15%"
-    />
-    <CustomInput 
-      placeholder="Password" 
-      value={password} 
-      setValue={setPassword} 
-      secureTextEntry={true}
-      customTop="15%"
-    />
-    <CustomInput 
-      placeholder="Confirm Password" 
-      value={confirmPassword} 
-      setValue={setConfirmPassword} 
-      secureTextEntry={true} 
+      placeholder="Enter Email" 
+      value={code} 
+      setValue={setCode} 
       customTop="15%"
     />
     
   </KeyboardAvoidingView>
 
   <CustomButton 
-    text= "Register"
-    onPress={onSignUpPressed}
+    text= "Send Code"
+    onPress={onConfirmPressed}
   />
+ 
   <CustomButton 
-  text={<Text style={{ textDecorationLine: 'underline' }}>Already have an account?</Text>} 
+  text={<Text style={{ textDecorationLine: 'underline' }}>Back to Sign In</Text>} 
   onPress={onHaveAnAccountPressed}
   type= "TERTIARY"
 />
+
   </View>
   </LinearGradient>
   
@@ -101,8 +77,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 0,
     position: 'relative',
-    //backgroundColor: 'black',
+
     
+  },
+  title: {
+    color: 'white',
+    top: '60%',
+    fontSize: 20,
   },
 
   logo: {
@@ -130,4 +111,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default SignUp
+export default ForgotPassword

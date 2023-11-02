@@ -2,14 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import SignIn from './src/pages/SignIn/SignIn';
 import SignUp from './src/pages/SignUp/SignUp';
+import HomePage from './src/pages/HomePage';
 import { LinearGradient } from 'expo-linear-gradient'; // Import the LinearGradient component
 import Navigation from './src/navigation';
 
 
-export default function App() {
+export default function App() { 
   return (
     <View style={styles.root}>
-      <LinearGradient
+     <LinearGradient
       colors={['#1F1F1F', '#000000']} // Set your gradient colors here
       style={styles.root}
       >
@@ -28,3 +29,5 @@ const styles = StyleSheet.create({
   
   
 });
+//#FFFFFF
+//#1F1F1F
