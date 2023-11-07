@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet, useWindowDimensions, Dimensions, TextInput, KeyboardAvoidingView} from 'react-native';
 import React, {useState} from 'react';
-import RegisterLogo from '../../../assets/images/bazooka_logo1.png';
+import Logo from '../../../assets/images/bazooka_logo1.png';
 import { LinearGradient } from 'expo-linear-gradient';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
@@ -8,10 +8,9 @@ import { useNavigation } from '@react-navigation/native';
 
 
 
-const ResetPassword = () => {
+const EnterCode = () => {
   const navigation = useNavigation();
-  const [password, setPassword] = useState('');
-  const [confrimPassword, setConfirmPassword] = useState('');
+  const [code, setCode] = useState('');
 
 
   const {width, height} = useWindowDimensions();
@@ -19,7 +18,7 @@ const ResetPassword = () => {
 
   const onConfirmPressed = () => {
     console.warn("Signed In");
-    navigation.navigate('SignIn');
+    navigation.navigate('ResetPassword');
   }
   const onHaveAnAccountPressed = () => {
     console.warn("Register");
@@ -34,11 +33,11 @@ const ResetPassword = () => {
     >
       <View style = {styles.root}>
       <Image 
-      source={RegisterLogo} 
+      source={Logo} 
       style = {[styles.logo, {height: height * 0.4}]} 
       resizeMode="contain" 
       />
-      <Text style ={styles.title}>Reset Passward</Text>
+      <Text style ={styles.title}>Enter Verification Code</Text>
     
   <KeyboardAvoidingView
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -46,22 +45,16 @@ const ResetPassword = () => {
   >
 
     <CustomInput 
-      placeholder="New Password" 
-      value={password} 
-      setValue={setPassword} 
+      placeholder="Enter Code" 
+      value={code} 
+      setValue={setCode} 
       customTop="15%"
     />
-    <CustomInput 
-    placeholder="Confrim Password" 
-    value={confrimPassword} 
-    setValue={setConfirmPassword} 
-    customTop="15%"
-  />
     
   </KeyboardAvoidingView>
 
   <CustomButton 
-    text= "Reset Password"
+    text= "Verify"
     onPress={onConfirmPressed}
   />
  
@@ -89,7 +82,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'white',
-    top: '55%',
+    top: '60%',
     fontSize: 20,
   },
 
@@ -118,4 +111,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default ResetPassword
+export default EnterCode

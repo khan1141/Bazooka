@@ -18,7 +18,7 @@ const ForgotPassword = () => {
 
   const onConfirmPressed = () => {
     console.warn("Signed In");
-    navigation.navigate('HomePage');
+    navigation.navigate('EnterCode');
   }
   const onHaveAnAccountPressed = () => {
     console.warn("Register");

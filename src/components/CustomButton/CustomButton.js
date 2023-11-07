@@ -29,6 +29,16 @@ const styles = StyleSheet.create({
         marginVertical: '1%',
         alignItems: 'flex-start',
     },
+    container_YOUTUBE: {
+      
+       // position: 'absolute',
+        bottom: 0,
+        left: 0, // You can adjust the left position if needed
+        right: 0, // You can adjust the right position if needed
+        backgroundColor: 'red',
+        width: '40%',
+      
+  },
     text: {
         fontWeight: 'bold',
         color: 'white',

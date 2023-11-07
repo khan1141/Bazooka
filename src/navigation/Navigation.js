@@ -8,6 +8,9 @@ import HomePage from '../pages/HomePage';
 import Confirmation from '../pages/Confirmation';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword';
 import ResetPassword from '../pages/ResetPassword';
+import EnterCode from '../pages/EnterCode';
+import OnlineTraining from '../pages/OnlineTraining';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -20,8 +23,10 @@ const Navigation = () => {
         <Stack.Screen name='SignUp' component={SignUp}/>
         <Stack.Screen name='Confirmation' component={Confirmation}/>
         <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
+        <Stack.Screen name='EnterCode' component={EnterCode}/>
         <Stack.Screen name='ResetPassword' component={ResetPassword}/>
         <Stack.Screen name='HomePage' component={HomePage}/>
+        <Stack.Screen name='OnlineTraining' component={OnlineTraining}/>
     </Stack.Navigator>
    </NavigationContainer>
   );
