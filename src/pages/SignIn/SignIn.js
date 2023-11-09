@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, useWindowDimensions, Dimensions, TextInput, KeyboardAvoidingView} from 'react-native';
+import { View, Text, Image, StyleSheet, useWindowDimensions, Dimensions, TextInput, KeyboardAvoidingView, SafeAreaView} from 'react-native';
 import React, {useState} from 'react';
 import Logo from '../../../assets/images/logo_1.png';
 import BackgroundImage from '../../../assets/images/background_image1.png'
@@ -15,7 +15,7 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
 
   const {width, height} = useWindowDimensions();
-  const windowWidth = Dimensions.get('window').width;
+  //const windowWidth = Dimensions.get('window').width;
 
   const onSignInPressed = () => {
     console.warn("Signed In");
@@ -37,20 +37,21 @@ const SignIn = () => {
       colors={['#1F1F1F', '#000000']} // Set your gradient colors here
       style={styles.linear}
       >
+      <SafeAreaView style={styles.saferoot}>
       <View style = {styles.root}>
       <Image 
       source={Logo} 
-      style = {[styles.logo, {height: height * 0.7}]} 
+      style = {[styles.logo, {height: height * 0.7}, {width: width * 1.15}]} 
       resizeMode="contain" 
       />
       <Image 
       source={Quote} 
-      style = {[styles.quote, {height: height * 0.7}]} 
+      style = {[styles.quote, {height: height * 0.7}, {width: width * 0.9}]} 
       resizeMode="contain" 
       />
       <Image 
       source={BackgroundImage} 
-      style = {[styles.background, {height: height * 0.99}]} 
+      style = {[styles.background, {height: height * 0.99}, {width: width * 1.30}]} 
       resizeMode="contain" 
       />
      
@@ -90,7 +91,7 @@ const SignIn = () => {
   />
 
   </View>
-
+  </SafeAreaView>
     </LinearGradient>
     
   
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
   logo: {
     position: 'absolute',
     transform: [{rotate:'6deg'}],
-    width: '115%',
+    //width: '115%',
     top: '6%',
     right: '4%',
     left:'2%',
@@ -121,16 +122,19 @@ const styles = StyleSheet.create({
   },
   background: {
     position: 'absolute',
-    width: '130%',
-    height: '100%',
+   // width: '130%',
+   // height: '100%',
     top: '5%',
    // zIndex: 1,
-    padding: 20,
+   // padding: 20,
     
+  },
+  saferoot: {
+    flex: 1,
   },
   quote: {
     position: 'absolute',
-    width: '90%',
+   // width: '90%',
     top: '3%',
     left:'7%',
     maxWidth: '130%',

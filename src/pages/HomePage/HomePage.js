@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, Linking, ScrollView, SafeAreaView } from 'react-native'
 import React from 'react'
 import OnlineTraining from '../../../assets/images/OnlineTraining.png';
 import MainLogo from '../../../assets/images/MainLogo.png';
@@ -35,7 +35,11 @@ const HomePage = () => {
     colors={['#1F1F1F', '#000000']} // Set your gradient colors here
     style={styles.linear}
     >
-     
+    <SafeAreaView style={styles.saferoot}>
+      <ScrollView 
+      style= {styles.scrollView}
+      contentContainerStyle={styles.contentContainer}
+    >
         <View style={styles.root}>
 
            <Image
@@ -82,12 +86,14 @@ const HomePage = () => {
         </View>
         </View>
         <CustomButton 
-        text={<Text style={styles.youtube}>Youtube</Text>}
+        text={<Text>Youtube</Text>}
         onPress={openYoutubeChannel}
         type='YOUTUBE'
       />
         </View>
-      
+
+       </ScrollView>
+      </SafeAreaView>
       </LinearGradient>
   )
 }
@@ -95,12 +101,30 @@ const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
   },
+  saferoot: {
+    flex: 1,
+  },
   rooty: {
     alignItems: 'center',
     marginHorizontal: 10,
-    
- 
-   
+  },
+  scrollView: {
+    height: '10%',
+    width: '100%',
+    margin: 0,
+    alignSelf: 'center',
+    padding: 0,
+  //  borderWidth: 5,
+    borderRadius: 5,
+  //  borderColor: 'black',
+  //  backgroundColor: 'lightblue'
+  
+  },
+  contentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+//    backgroundColor: 'lightgrey',
+    paddingBottom: 80,
   },
    linear: {
     flex: 1,
@@ -154,11 +178,12 @@ const styles = StyleSheet.create({
     
   },
    mainLogo: {
-    width: '50%',
+   // width: '50%',
     height: '15%',
     resizeMode: 'contain',
-    top:'5%',
-    alignItems: 'center'
+    top:'7.5%',
+    alignItems: 'center',
+   // marginBottom: '-1%'
    },
 });
 
