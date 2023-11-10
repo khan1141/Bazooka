@@ -26,9 +26,9 @@ const HomePage = () => {
   const openShop = () => {
     Linking.openURL('https://ww1.bazookasquad.com/?sub1=952c6d1d-7aaa-11ee-b512-aea6853c7564');
   }
-  const onSignInPressed = () => {
-    console.warn("Signed In");
-    navigation.navigate('HomePage');
+  const onClassSchedulePressed = () => {
+    //console.warn("Signed In");
+    navigation.navigate('ClassSchedule');
   }
   return (
     <LinearGradient
@@ -57,7 +57,7 @@ const HomePage = () => {
             </TouchableOpacity>
 
             <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={handlePress}>
+            <TouchableOpacity onPress={onClassSchedulePressed}>
               <Image
                 source={ClassSchedule}
                 style={styles.class} // Set the desired width and height for your image

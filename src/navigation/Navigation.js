@@ -10,6 +10,7 @@ import ForgotPassword from '../pages/ForgotPassword/ForgotPassword';
 import ResetPassword from '../pages/ResetPassword';
 import EnterCode from '../pages/EnterCode';
 import OnlineTraining from '../pages/OnlineTraining';
+import ClassSchedule from '../pages/ClassSchedule';
 
 
 const Stack = createNativeStackNavigator();
@@ -27,6 +28,7 @@ const Navigation = () => {
         <Stack.Screen name='ResetPassword' component={ResetPassword}/>
         <Stack.Screen name='HomePage' component={HomePage}/>
         <Stack.Screen name='OnlineTraining' component={OnlineTraining}/>
+        <Stack.Screen name='ClassSchedule' component={ClassSchedule}/>
     </Stack.Navigator>
    </NavigationContainer>
   );

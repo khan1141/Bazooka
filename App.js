@@ -5,6 +5,7 @@ import SignUp from './src/pages/SignUp/SignUp';
 import HomePage from './src/pages/HomePage';
 import { LinearGradient } from 'expo-linear-gradient'; // Import the LinearGradient component
 import Navigation from './src/navigation';
+import ClassSchedule from './src/pages/ClassSchedule';
 
 
 export default function App() { 
